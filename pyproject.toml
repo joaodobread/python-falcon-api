@@ -5,7 +5,7 @@ description = ""
 authors = ["João Victor"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 conventional-commit = "^0.4.2"
