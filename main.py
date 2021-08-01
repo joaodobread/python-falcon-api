@@ -2,8 +2,11 @@ import os
 from dotenv import find_dotenv, load_dotenv
 from src.server import Server
 import src.routes
+from src.security.jwt_service import JwtService
+
 
 load_dotenv(find_dotenv())
+
 
 if __name__ == '__main__':
     app = Server.get_instance()

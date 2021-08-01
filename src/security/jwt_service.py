@@ -6,7 +6,7 @@ class JwtService:
     __instance = None
 
     def __init__(self):
-        self.__secret = os.getenv('SECRET_KEY')
+        self.__secret = str(os.getenv('SECRET_KEY'))
 
     def sign(self, payload):
         """Encode a payload to a jwt

@@ -1,13 +1,17 @@
 from falcon import App
 from wsgiref import simple_server
 from logging import Logger
+from .common.middlewares.authentication import AuthenticationMiddleware
 
 
 class Server:
     __instance = None
+    __middlewares = [
+        AuthenticationMiddleware()
+    ]
 
     def __init__(self) -> None:
-        self.__app = App()
+        self.__app = App(middleware=self.__middlewares)
 
     @classmethod
     def get_instance(cls):
